@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Jira Kanban Board Clone </title>
+        <link rel="shortcut icon" href="./favicon.png">
+        <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/select.css">
+        <link rel="stylesheet" href="./icons/icons.css">
+        <script src="./scripts/script.js"></script>
+        <script src="./scripts/select.js"></script>
+    </head>
+    <body>
+        <div id="side-panel">
+            <embed src="./icons/logo.svg" width="40px">
+            <span type="button" class="button nav" id="show_i">New Issue</span>
+        </div>
+        <div id="mid-side-panel">
+            <embed src="./icons/project.svg" width="40px" style="display: inline;">
+            <span> Internship</span>
+            <br><br>
+            <span class="mid-side-button" selected="true"> <span class="board-icon"></span>  Kanban Board </span>
+            <span class="mid-side-button"> <span class="settings-icon"></span>  Project Settings </span>
+            <hr>
+            <span class="mid-side-button notimplemented"> <span class="notimplemented-icon"></span>  Some Feature </span>
+            <span class="mid-side-button notimplemented"> <span class="notimplemented-icon"></span>  Some Feature </span>
+            <span class="mid-side-button notimplemented"> <span class="notimplemented-icon"></span>  Some Feature </span>
+            <span class="mid-side-button notimplemented"> <span class="notimplemented-icon"></span>  Some Feature </span>
+        </div>
+        <div id="main-body">
+            <div id="topbar">
+                <span> Projects / Internship / Kanban</span><br>
+                <span class="topbar-title"> Kanban Board </span>
+            </div>
+            <div id="main" ondrop="return false">
+                <div class="main-container" id="backlog">
+                    <span class="container-title">Backlog</span>
+                    <div class="block">
+                        <span class="block-header">The Project has been complete! Thanks for the help lol</span>
+                        <span class="avatar-you-icon right"></span>
+                        <data style="display: none;" value="description">This is where the description is gonna be.</data>
+                        <data style="display: none;" value="priority">high</data>
+                        <data style="display: none;" value="reporter">me</data>
+                        <data style="display: none;" value="assignees">you</data>
+                        <data style="display: none;" value="summary">This is where the summary is gonna be that's gonna be shown when you tap on the block.</data>
+                        <data style="display: none;" value="type">bug</data>
+                    </div>
+                </div>
+                <div class="main-container" id="development" ondrop="drop(this, event)" ondragenter="return false" ondragover="return false">
+                    <span class="container-title">Selected for Development</span>
+                    <!-- BLOCKS GO HERE -->
+                </div>
+                <div class="main-container" id="inprogress" ondrop="drop(this, event)" ondragenter="return false" ondragover="return false">
+                    <span class="container-title">In Progress</span>
+                    <!-- BLOCKS GO HERE -->
+                </div>
+                <div class="main-container" id="done" ondrop="drop(this, event)" ondragenter="return false" ondragover="return false">
+                    <span class="container-title">Done</span>
+                    <!-- BLOCKS GO HERE -->
+                </div>
+            </div>
+        </div>
+        
+        <div id="create-issue-container"></div>
+        <div id="create-issue">
+            <p class="header">Create Issue</p>
+            <p class="label">Issue Type:</p>
+            <div class="select">
+                <input type="hidden" name="issue-type">
+                <div class="select-title">
+                    <span class="arrow dropdownarrow"></span>
+                    <span>Issue Type</span>
+                </div>
+                <div class="dropdown">
+                    <span class="option" data="task"><span class="green-circle"></span> Task</span>
+                    <span class="option" data="bug"><span class="arrow arrow-up"></span> Bug</span>
+                    <span class="option" data="story"><span class="arrow arrow-down"></span> Story</span>
+                </div>
+            </div>
+            <p class="label">Priority:</p>
+            <div class="select">
+                <input type="hidden" name="priority">
+                <div class="select-title">
+                    <span class="arrow dropdownarrow"></span>
+                    <span>Priority</span>
+                </div>
+                <div class="dropdown">
+                    <span class="option" data="high"><span class="arrow arrow-up"></span> High</span>
+                    <span class="option" data="medium"><span class="green-circle"></span> Medium</span>
+                    <span class="option" data="low"><span class="arrow arrow-down"></span> Low</span>
+                </div>
+            </div>
+            <p class="label">Summary of the issue:</p>
+            <input name="summary" class="input" placeholder="Summary of the issue." required>
+            <p class="label">Description of the issue:</p>
+            <textarea name="description" class="textarea" placeholder="Description of the issue."></textarea>
+            <p class="label">Reporter:</p>
+            <div class="select">
+                <input type="hidden" name="reporter">
+                <div class="select-title">
+                    <span class="arrow dropdownarrow"></span>
+                    <span>Reporter</span>
+                </div>
+                <div class="dropdown">
+                    <span class="option" data="you">You<span class="avatar-you-icon right"></span></span>
+                    <span class="option" data="me">Me<span class="avatar-me-icon right"></span></span>
+                    <span class="option" data="else">Someone Else<span class="avatar-else-icon right"></span></span>
+                </div>
+            </div>
+            <p class="label">Assignees:</p>
+            <div class="select">
+                <input type="hidden" name="assignees">
+                <div class="select-title">
+                    <span class="arrow dropdownarrow"></span>
+                    <span>Assignees:</span>
+                </div>
+                <div class="dropdown">
+                    <span class="option" data="you">You<span class="avatar-you-icon right"></span></span>
+                    <span class="option" data="me">Me<span class="avatar-me-icon right"></span></span>
+                    <span class="option" data="else">Someone Else<span class="avatar-else-icon right"></span></span>
+                </div>
+            </div><br>
+            <input type="button" class="button" id="submit" value="Submit">
+            <input type="button" class="button" id="cancel" value="Cancel">
+        </div>
+
+        <div id="block-click-box">
+            <span class="header">Issue Info</span><br><br>
+            <div id="main-block-box">
+
+            </div>
+        </div>
+    </body>
+</html>

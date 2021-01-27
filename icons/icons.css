@@ -1,0 +1,52 @@
+
+.settings-icon {
+    vertical-align: middle;
+    background-image: url(./settings.svg);
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}
+
+.board-icon {
+    vertical-align: middle;
+    background-image: url(./board.svg);
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}
+
+.notimplemented-icon {
+    vertical-align: middle;
+    background-image: url(./forbidden.svg);
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}
+
+.avatar-me-icon {
+    vertical-align: middle;
+    background-image: url(./avatar-me.svg);
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}
+
+.avatar-you-icon {
+    vertical-align: middle;
+    background-image: url(./avatar-you.svg);
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}
+
+.avatar-else-icon {
+    vertical-align: middle;
+    background-image: url(./avatar-else.svg);
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}
+
+.right {
+    float: right;
+}
